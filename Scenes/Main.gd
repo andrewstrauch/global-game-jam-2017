@@ -22,6 +22,8 @@ func _on_DeathTimer_timeout():
 	_change_map(controller.current_map_name, controller.checkpoint)
 	
 func _fixed_process(delta):
+	if(Input.is_key_pressed(KEY_ESCAPE)):
+		get_tree().quit()
 	if(Input.is_key_pressed(KEY_R)):
 		_change_map("res://Scenes/Map1-1-1/Map1-1-1.tscn", 0)
 
