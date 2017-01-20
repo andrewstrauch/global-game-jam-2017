@@ -1,4 +1,4 @@
-extends Node
+extends "res://Scenes/MapTemplate.gd"
 
 
 

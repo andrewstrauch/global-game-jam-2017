@@ -1,13 +1,10 @@
+extends Node
 
-extends "res://Scenes/MapTemplate.gd"
-
-# member variables here, example:
-# var a=2
-# var b="textvar"
+var controller
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	controller = get_node("/root/Controller")
+	set_fixed_process(true)
+	
+func _fixed_process(delta):
 	pass
-
-
