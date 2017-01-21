@@ -26,19 +26,19 @@ func _ready():
 func _fixed_process(delta):
 	var motion = Vector2()
 	
-	if (Input.is_action_pressed("ui_up")):
+	if (Input.is_key_pressed(KEY_W)):
 		motion += Vector2(0, -1)
-	if (Input.is_action_pressed("ui_down")):
+	if (Input.is_key_pressed(KEY_S)):
 		motion += Vector2(0, 1)
-	if (Input.is_action_pressed("ui_left")):
+	if (Input.is_key_pressed(KEY_A)):
 		motion += Vector2(-1, 0)
-	if (Input.is_action_pressed("ui_right")):
+	if (Input.is_key_pressed(KEY_D)):
 		motion += Vector2(1, 0)
 	
 	motion = motion.normalized()*MOTION_SPEED*delta
 	move(motion)
 	
-	isPullingTrigger = Input.is_key_pressed(KEY_SPACE)
+	isPullingTrigger = Input.is_mouse_button_pressed(1)
 	
 	if (isPullingTrigger && weaponCanFire):
 			weaponCanFire = false
@@ -99,8 +99,6 @@ func _on_Hitbox_body_enter( body ):
 		var playerRect = self.get_item_rect()
 		var offset = Vector2(0, 0)
 		# Create pulse & light source
-		if (Input.is_action_pressed("ui_up") || Input.is_key_pressed(KEY_W)):
-			offset = Vector2(0, -1) * (playerRect.size.height/2)
 		if (Input.is_action_pressed("ui_up")):
 			offset += Vector2(0, -1) * (playerRect.size.height/2)
 		if (Input.is_action_pressed("ui_down")):
