@@ -9,6 +9,7 @@ var enemy_class = preload("res://Enemies/Enemy.gd")
 var tiles = preload("res://Scenes/Tiles1.res")
 var pulseLight = preload("res://Scenes/PulseLight.tscn")
 var shockWave = preload("res://Scenes/ShockWave.tscn")
+var impactSamplePlayer = preload("res://Scenes/ImpactSamplePlayer.tscn")
 #var cube = preload("res://Enemies/Cube.gd")
 
 func _ready():
@@ -36,9 +37,16 @@ func _on_hitbox_body_enter( body ):
 		_death()
 		
 func _spawn_shockwave():
+	var impactSoundPlayer = impactSamplePlayer.instance()
+	get_parent().add_child(impactSoundPlayer)
+	var soundNames = impactSoundPlayer.get_sample_library().get_sample_list()
+	var randomIndex = randi() % soundNames.size()
+	impactSoundPlayer.play(soundNames[randomIndex])
+	
 	var newWave = shockWave.instance()
 	get_parent().add_child(newWave)
 	newWave.set_pos(get_pos())
+	
 	var newLight = pulseLight.instance()
 	get_parent().add_child(newLight)
 	newLight.set_pos(get_pos())
