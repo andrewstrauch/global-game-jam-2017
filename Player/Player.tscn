@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/heartbeat.gd" type="Script" id=2]
-[ext_resource path="res://Player/Player.png" type="Texture" id=3]
+[ext_resource path="res://Player/Placeholder.png" type="Texture" id=3]
 [ext_resource path="res://Textures/PitchBlack.tex" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -90,7 +90,6 @@ visibility/light_mask = 2
 transform/pos = Vector2( -282.182, 35.9326 )
 transform/scale = Vector2( 22.5569, 12.6493 )
 enabled = true
-editor_only = false
 texture = ExtResource( 4 )
 offset = Vector2( 0, 0 )
 scale = 1.0
