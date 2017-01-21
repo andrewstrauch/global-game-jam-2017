@@ -17,8 +17,8 @@ func _ready():
 	get_node("LoadTimer").connect("timeout", self, "_on_LoadTimer_timeout")
 	controller = get_node("/root/Controller")
 	load_timer = get_node("LoadTimer")
-	# _change_map("res://Scenes/Map1/Map1.tscn", 0)
-	_change_map("res://Scenes/TitleScreen.tscn", 0)
+	_change_map("res://Scenes/Map1/Map1.tscn", 0)
+	# _change_map("res://Scenes/TitleScreen.tscn", 0)
 	set_fixed_process(true)
 	
 func _on_DeathTimer_timeout():
@@ -29,9 +29,7 @@ func _fixed_process(delta):
 	if(Input.is_key_pressed(KEY_ESCAPE)):
 		get_tree().quit()
 	if(Input.is_key_pressed(KEY_R)):
-		# _change_map("res://Scenes/Map1/Map1.tscn", 0)
-		#for item in get_node("/root/"):
-		_change_map("res://Scenes/TitleScreen.tscn", 0)
+		_change_map("res://Scenes/Map1/Map1.tscn", 0)
 
 func _change_map(map, cp):
 	if (load_state == 0):
