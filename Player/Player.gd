@@ -57,7 +57,7 @@ func decrement_health(damage):
 func _weapon_shoot():
 	get_node("WeaponReloadTimer").set_wait_time(.3)
 	get_node("WeaponReloadTimer").start()
-	var shoot_speed = 4
+	var shoot_speed = 1500
 	var bullet = load("res://Player/PlayerBullet.tscn")
 	
 	var bi = bullet.instance()
@@ -65,7 +65,7 @@ func _weapon_shoot():
 	bi.set_rot(bullet_rotation)
 	bi.set_pos(get_pos() + Vector2(0, 0))
 	get_parent().add_child(bi)
-	bi.apply_impulse(Vector2(), ( get_global_mouse_pos() - self.get_global_pos() ) * shoot_speed)
+	bi.apply_impulse(Vector2(), ( get_global_mouse_pos() - self.get_global_pos() ).normalized() * shoot_speed)
 
 	
 #	get_node("WeaponReloadTimer").set_wait_time(.3)
