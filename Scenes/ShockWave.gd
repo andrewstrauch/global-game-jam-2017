@@ -1,6 +1,6 @@
 extends Node2D
 
-export var maxAge = 1
+export var maxAge = 1  # Seconds
 var age = 0
 
 func _ready():

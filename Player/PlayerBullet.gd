@@ -32,13 +32,16 @@ func _on_hitbox_body_enter( body ):
 		_death()
 	if(body extends TileMap):
 		# Create pulse & light source
-		var newWave = shockWave.instance()
-		get_parent().add_child(newWave)
-		newWave.set_pos(get_pos())
-		var newLight = pulseLight.instance()
-		get_parent().add_child(newLight)
-		newLight.set_pos(get_pos())
-		
+		_spawn_shockwave()
 		_death()
+		
+func _spawn_shockwave():
+	var newWave = shockWave.instance()
+	get_parent().add_child(newWave)
+	newWave.set_pos(get_pos())
+	var newLight = pulseLight.instance()
+	get_parent().add_child(newLight)
+	newLight.set_pos(get_pos())
+		
 func _death():
 	queue_free()
