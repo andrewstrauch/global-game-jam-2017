@@ -10,7 +10,6 @@
 ## TODO (Coding)\
 - Implemment player lose mechanic
 - Level design Map 1
-- Expand on heartbeat to make heartbeat happening at all times
 - Shooting Reload functionality
 - Shooting Reload UI
 
@@ -26,6 +25,7 @@
 - Enemy sound effect -- walking (only play if moving, e.g. footsteps)
 
 ## Stretch Goals
+- Expand on heartbeat to make heartbeat happening at all times
 - Rethink fog of war (relates to light bug), can we remove FOW rather than adding white light? art suggestion
 - DISCOVERY: Determine if we want traps (and what those would be)
 
