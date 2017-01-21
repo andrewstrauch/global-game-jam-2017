@@ -10,7 +10,7 @@ func _ready():
 	pass
 
 func _on_StartButton_pressed():
-	get_node("/root/root")._change_map("res://Scenes/Map1/Map1.tscn", 0)
+	get_node("/root/root")._change_map("map1", 0)
 
 func _on_ExitButton_pressed():
 	get_tree().quit()

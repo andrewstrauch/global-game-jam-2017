@@ -1,8 +1,8 @@
 extends Node2D
 
 const map_names = {
-	"res://Scenes/TitleScreen.tscn": "TitleScreen",
-	"res://Scenes/Map1/Map1.tscn": "Map1"
+	"title": "res://Scenes/TitleScreen.tscn",
+	"map1": "res://Scenes/Map1/Map1.tscn"
 }
 
 #Controller variable
@@ -17,7 +17,7 @@ func _ready():
 	get_node("LoadTimer").connect("timeout", self, "_on_LoadTimer_timeout")
 	controller = get_node("/root/Controller")
 	load_timer = get_node("LoadTimer")
-	_change_map("res://Scenes/Map1/Map1.tscn", 0)
+	_change_map("map1", 0)
 	# _change_map("res://Scenes/TitleScreen.tscn", 0)
 	set_fixed_process(true)
 	
@@ -29,7 +29,7 @@ func _fixed_process(delta):
 	if(Input.is_key_pressed(KEY_ESCAPE)):
 		get_tree().quit()
 	if(Input.is_key_pressed(KEY_R)):
-		_change_map("res://Scenes/Map1/Map1.tscn", 0)
+		_change_map("map1", 0)
 
 func _change_map(map, cp):
 	if (load_state == 0):
@@ -48,7 +48,7 @@ func _change_map(map, cp):
 		if (controller.current_map != null):
 			controller.current_map.queue_free()
 			controller.current_map.set_name(controller.current_map.get_name() + "_deleted" )
-		var m = load(map)
+		var m = load(map_names[map])
 		controller.checkpoint = cp
 		controller.current_map = m.instance()
 		controller.current_map_name = map
