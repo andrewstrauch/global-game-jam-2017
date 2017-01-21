@@ -34,7 +34,7 @@ func _ready():
 	camera.make_current()
 	set_fixed_process(true)
 	#OS.set_window_fullscreen(true)
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	pass
 
 func _fixed_process(delta):
