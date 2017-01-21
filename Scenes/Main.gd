@@ -14,6 +14,8 @@ var tmap
 var tcp
 
 func _ready():
+#	for each in get_tree().get_current_scene().get_children():
+#		print(each.get_name())
 	get_node("LoadTimer").connect("timeout", self, "_on_LoadTimer_timeout")
 	controller = get_node("/root/Controller")
 	load_timer = get_node("LoadTimer")
