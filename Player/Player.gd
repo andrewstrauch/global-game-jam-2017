@@ -49,7 +49,7 @@ func decrement_health(damage):
 	health -= damage
 	if (health <= HEARTBEAT_FAST_HP):
 		get_node("./HeartbeatPlayer").play_slow_heartbeat()
-	elif (health == 1):
+	elif (health <= HEARTBEAT_SLOW_HP):
 		get_node("./HeartbeatPlayer").play_fast_heartbeat()
 
 func _weapon_shoot(motion):
