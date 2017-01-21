@@ -3,6 +3,7 @@ extends KinematicBody2D
 var isBulletFacingRight
 var direction = int()
 var speed = 14
+var damage = 1
 #var hurtful_type = preload("res://Enemies/HurtfulToPlayer.gd")
 var enemy_class = preload("res://Enemies/Enemy.gd")
 var tiles = preload("res://Scenes/Tiles1.res")
@@ -25,7 +26,7 @@ func _fixed_process(delta):
 
 func _on_hitbox_body_enter( body ):
 	if(body extends enemy_class):
-		#kill enemy
+		body.takeDamage(damage)
 		_death()
 	if(body extends TileMap):
 		_death()
