@@ -95,16 +95,16 @@ func _weapon_reload_timer_timeout():
 func _on_Hitbox_body_enter( body ):
 	if(body extends TileMap):
 		var playerRect = self.get_item_rect()
-		var offset
+		var offset = Vector2(0, 0)
 		# Create pulse & light source
 		if (Input.is_action_pressed("ui_up")):
-			offset = Vector2(0, -1) * (playerRect.size.height/2)
+			offset += Vector2(0, -1) * (playerRect.size.height/2)
 		if (Input.is_action_pressed("ui_down")):
-			offset = Vector2(0, 1) * (playerRect.size.height/2)
+			offset += Vector2(0, 1) * (playerRect.size.height/2)
 		if (Input.is_action_pressed("ui_left")):
-			offset = Vector2(-1, 0) * (playerRect.size.width/2)
+			offset += Vector2(-1, 0) * (playerRect.size.width/2)
 		if (Input.is_action_pressed("ui_right")):
-			offset = Vector2(1, 0) * (playerRect.size.width/2)
+			offset += Vector2(1, 0) * (playerRect.size.width/2)
 		_spawn_shockwave(offset)
 		
 func _spawn_shockwave( offset ):
