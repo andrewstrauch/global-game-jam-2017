@@ -39,7 +39,7 @@ func _on_hitbox_body_enter( body ):
 func _spawn_shockwave():
 	var impactSoundPlayer = impactSamplePlayer.instance()
 	get_parent().add_child(impactSoundPlayer)
-	impactSoundPlayer.set_pos(Vector2(0,0))
+	impactSoundPlayer.set_pos(get_pos())
 	var soundNames = impactSoundPlayer.get_sample_library().get_sample_list()
 	var randomIndex = randi() % soundNames.size()
 	impactSoundPlayer.play(soundNames[randomIndex])
