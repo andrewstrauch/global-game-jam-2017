@@ -55,14 +55,26 @@ func decrement_health(damage):
 		get_node("./HeartbeatPlayer").play_fast_heartbeat()
 
 func _weapon_shoot(motion):
-	get_node("WeaponReloadTimer").set_wait_time(.3)
-	get_node("WeaponReloadTimer").start()
+	print("shoot")
+	var shoot_speed = 10
 	var bullet = load("res://Player/PlayerBullet.tscn")
+	
 	var bi = bullet.instance()
-	get_tree().get_root().add_child(bi)
-	bi.set_pos(get_pos() + Vector2(20, 20))
-	#bi.init(motion)
-	bi.init(isPlayerFacingRight)
+	var bullet_rotation = get_angle_to(get_global_mouse_pos()) + self.get_rot()
+	bi.set_rot(bullet_rotation)
+	bi.set_pos(get_pos() + Vector2(0, 0))
+	get_parent().add_child(bi)
+	#bi.apply_impulse(Vector2(), ( get_global_mouse_pos() - self.get_global_pos() ) * shoot_speed)
+
+	
+#	get_node("WeaponReloadTimer").set_wait_time(.3)
+#	get_node("WeaponReloadTimer").start()
+#	var bullet = load("res://Player/PlayerBullet.tscn")
+#	var bi = bullet.instance()
+#	get_tree().get_root().add_child(bi)
+#	bi.set_pos(get_pos() + Vector2(20, 20))
+#	bi.init(motion)
+#	bi.init(isPlayerFacingRight)
 
 #	var rotation  = self.get_rot()
 #	var direction = Vector2(sin(rotation), cos(rotation))
