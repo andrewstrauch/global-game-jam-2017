@@ -1,13 +1,14 @@
 # GGJ2017
 
 ## Current Work
-- FlareVulca - Close game loop (have map end)
+- FlareVulca - 
 - Icelus - Coding last enemy
-- JediSange - Groom board
+- JediSange - 
 - RamielRowe - Track down the light bug
 - Zephyrum - Rotate tiles to have up/down/left/right walls
 
 ## TODO (Coding)
+- BUG: Collision on bottom right wall is wrong (shoot through wall objects on current Map 1) -- recheck all tiles
 - Shooting Reload functionality
 - Shooting Reload UI
 - Level design Map 1
