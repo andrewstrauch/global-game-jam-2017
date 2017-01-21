@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 const MOTION_SPEED = 180 # Pixels/second
+const HEARTBEAT_SLOW_HP = 2
+const HEARTBEAT_FAST_HP = 1
 var health = 3
 var controller
 
@@ -28,9 +30,9 @@ func reset_health():
 	health = 3
 	get_node("./HeartbeatPlayer").stop_heartbeat()
 	
-func decrement_health():
-	health -= 1
-	if (health == 2):
+func decrement_health(damage):
+	health -= damage
+	if (health <= HEARTBEAT_FAST_HP):
 		get_node("./HeartbeatPlayer").play_slow_heartbeat()
-	elif (health == 1):
+	elif (health <= HEARTBEAT_SLOW_HP):
 		get_node("./HeartbeatPlayer").play_fast_heartbeat()
