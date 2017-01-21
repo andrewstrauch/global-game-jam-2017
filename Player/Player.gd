@@ -62,5 +62,18 @@ func _weapon_shoot(motion):
 	#bi.init(motion)
 	bi.init(isPlayerFacingRight)
 
+#	var rotation  = self.get_rot()
+#	var direction = Vector2(sin(rotation), cos(rotation))
+#	
+#	var distance_from_me = 100 #need to best adjusted by you
+#	var spawn_point      = self.get_global_pos() + direction * distance_from_me
+#	
+#	var bullet = load("res://Player/PlayerBullet.tscn")
+#	var bi = bullet.instance()
+#	var world  = self.get_tree().get_root()
+#	
+#	world.add_child(bi)
+#	bi.set_global_pos(spawn_point)
+
 func _weapon_reload_timer_timeout():
     weaponCanFire = true
