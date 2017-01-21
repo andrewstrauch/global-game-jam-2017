@@ -4,14 +4,13 @@
 - FlareVulca - Close game loop (have map end)
 - Icelus - DISCOVERY: Figure out enemy types and add them to the list
 - JediSange - Groom board
-- RamielRowe
+- RamielRowe - Track down the light bug
 - Zephyrum - Rotate tiles to have up/down/left/right walls
 
 ## TODO
 - Rethink fog of war (relates to light bug), can we remove FOW rather than adding white light? art suggestion
 - Level end graphic (Stairs)
-- Enemy graphics (
-- Track down the light bug
+- Enemy graphics (seek Icelus for enemy types?)
 - Shooting Reload functionality
 - Shooting Reload UI
 - Level design Map 1
