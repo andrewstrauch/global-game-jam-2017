@@ -1,19 +1,19 @@
 # GGJ2017
 
 ## Current Work
-- FlareVulca - Close game loop (have map end)
+- FlareVulca - DISCOVERY: Enemy damage the player, figure out "death"
 - Icelus - Coding last enemy
-- JediSange - Groom board
+- JediSange - - BUG: Collision on bottom right wall is wrong (shoot through wall objects on current Map 1) -- recheck all tiles
 - RamielRowe - Track down the light bug
 - Zephyrum - Rotate tiles to have up/down/left/right walls
 
 ## TODO (Coding)
+- Implemment player lose mechanic
+- Level design Map 1
+- Reduce bullet size
+- BUG: Fix gravity of bullet, should behave as a kinematic body (requires removale of impulse and change to have bullet looping in direction)
 - Shooting Reload functionality
 - Shooting Reload UI
-- Level design Map 1
-- DISCOVERY: Enemy damage the player, figure out "death"
-- Implemment player lose mechanic
-- Expand on heartbeat to make heartbeat happening at all times
 
 ## TODO (Art)
 - Level end graphic (Stairs)
@@ -27,6 +27,7 @@
 - Enemy sound effect -- walking (only play if moving, e.g. footsteps)
 
 ## Stretch Goals
+- Expand on heartbeat to make heartbeat happening at all times
 - Rethink fog of war (relates to light bug), can we remove FOW rather than adding white light? art suggestion
 - DISCOVERY: Determine if we want traps (and what those would be)
 
