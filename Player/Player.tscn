@@ -76,6 +76,13 @@ trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
 
+[node name="WeaponReloadTimer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [node name="FogOfWar" type="Light2D" parent="."]
 
 visibility/visible = false

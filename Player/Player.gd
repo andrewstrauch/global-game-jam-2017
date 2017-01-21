@@ -49,7 +49,6 @@ func decrement_health(damage):
 	health -= damage
 	if (health <= HEARTBEAT_FAST_HP):
 		get_node("./HeartbeatPlayer").play_slow_heartbeat()
-<<<<<<< HEAD
 	elif (health == 1):
 		get_node("./HeartbeatPlayer").play_fast_heartbeat()
 
@@ -65,7 +64,3 @@ func _weapon_shoot(motion):
 
 func _weapon_reload_timer_timeout():
     weaponCanFire = true
-=======
-	elif (health <= HEARTBEAT_SLOW_HP):
-		get_node("./HeartbeatPlayer").play_fast_heartbeat()
->>>>>>> 080d9b0d3d2f5f7728bb8d2492cfaa0da2ae0e67
