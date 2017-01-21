@@ -14,6 +14,7 @@ var tmap
 var tcp
 
 func _ready():
+	get_node("LoadTimer").connect("timeout", self, "_on_LoadTimer_timeout")
 	controller = get_node("/root/Controller")
 	load_timer = get_node("LoadTimer")
 	# _change_map("res://Scenes/Map1/Map1.tscn", 0)
