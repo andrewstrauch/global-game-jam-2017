@@ -3,7 +3,8 @@ extends KinematicBody2D
 const MOTION_SPEED = 180 # Pixels/second
 const HEARTBEAT_SLOW_HP = 2
 const HEARTBEAT_FAST_HP = 1
-var health = 3
+const MAX_HEALTH = 3
+var health = MAX_HEALTH
 var controller
 var isPullingTrigger = false
 var weaponCanFire = bool (true)
@@ -44,7 +45,7 @@ func _fixed_process(delta):
 			_weapon_shoot()
 	
 func reset_health():
-	health = 3
+	health = MAX_HEALTH
 	get_node("./HeartbeatPlayer").stop_heartbeat()
 	
 func decrement_health(damage):
