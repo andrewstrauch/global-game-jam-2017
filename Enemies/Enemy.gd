@@ -21,10 +21,10 @@ func _fixed_process(delta):
 func takeDamage(damage):
 	hp -= damage
 	if(hp <= 0):
-		destroy()
+		_death()
 	pass
 
 # Destroy function to remove enemy and do any other cleanup
-func destroy():
+func _death():
 	queue_free()
 	pass
