@@ -57,7 +57,7 @@ func decrement_health(damage):
 func _weapon_shoot():
 	get_node("WeaponReloadTimer").set_wait_time(.3)
 	get_node("WeaponReloadTimer").start()
-	var shoot_speed = 6
+	var shoot_speed = 4
 	var bullet = load("res://Player/PlayerBullet.tscn")
 	
 	var bi = bullet.instance()
@@ -98,7 +98,7 @@ func _on_Hitbox_body_enter( body ):
 		var playerRect = self.get_item_rect()
 		var offset
 		# Create pulse & light source
-		if (Input.is_action_pressed("ui_up")):
+		if (Input.is_action_pressed("ui_up") || Input.is_key_pressed(KEY_W)):
 			offset = Vector2(0, -1) * (playerRect.size.height/2)
 		if (Input.is_action_pressed("ui_down")):
 			offset = Vector2(0, 1) * (playerRect.size.height/2)
