@@ -7,9 +7,11 @@
 - RamielRowe - Track down the light bug
 - Zephyrum - Rotate tiles to have up/down/left/right walls
 
-## TODO (Coding)\
+## TODO (Coding)
 - Implemment player lose mechanic
 - Level design Map 1
+- Reduce bullet size
+- BUG: Fix gravity of bullet, should behave as a kinematic body (requires removale of impulse and change to have bullet looping in direction)
 - Shooting Reload functionality
 - Shooting Reload UI
 
