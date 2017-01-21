@@ -5,9 +5,12 @@
 - Icelus
 - JediSange - Groom board
 - RamielRowe
-- Zephyrum
+- Zephyrum - Rotate tiles to have up/down/left/right walls
 
 ## TODO
+- Rethink fog of war (relates to light bug), can we remove FOW rather than adding white light? art suggestion
+- Level end graphic (Stairs)
+- Enemy graphics (
 - Track down the light bug
 - Reload functionality
 - Reload UI
