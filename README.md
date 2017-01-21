@@ -2,7 +2,7 @@
 
 ## Current Work
 - FlareVulca - Close game loop (have map end)
-- Icelus - DISCOVERY: Figure out enemy types and add them to the list
+- Icelus - Coding last enemy
 - JediSange - Groom board
 - RamielRowe - Track down the light bug
 - Zephyrum - Rotate tiles to have up/down/left/right walls
