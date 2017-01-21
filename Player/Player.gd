@@ -98,13 +98,10 @@ func _on_Hitbox_body_enter( body ):
 		var playerRect = self.get_item_rect()
 		var offset = Vector2(0, 0)
 		# Create pulse & light source
-<<<<<<< HEAD
 		if (Input.is_action_pressed("ui_up") || Input.is_key_pressed(KEY_W)):
 			offset = Vector2(0, -1) * (playerRect.size.height/2)
-=======
 		if (Input.is_action_pressed("ui_up")):
 			offset += Vector2(0, -1) * (playerRect.size.height/2)
->>>>>>> ea7d15de99b767416fff344d6b9532a5a19f303c
 		if (Input.is_action_pressed("ui_down")):
 			offset += Vector2(0, 1) * (playerRect.size.height/2)
 		if (Input.is_action_pressed("ui_left")):
