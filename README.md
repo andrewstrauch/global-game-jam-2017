@@ -2,7 +2,7 @@
 
 ## Current Work
 - FlareVulca - Close game loop (have map end)
-- Icelus
+- Icelus - DISCOVERY: Figure out enemy types and add them to the list
 - JediSange - Groom board
 - RamielRowe
 - Zephyrum - Rotate tiles to have up/down/left/right walls
@@ -15,7 +15,6 @@
 - Shooting Reload functionality
 - Shooting Reload UI
 - Level design Map 1
-- DISCOVERY: Figure out enemy types and add them to the list
 - DISCOVERY: Enemy damage the player, figure out "death"
 - Implemment player lose mechanic
 - DISCOVERY: Determine if we want traps (and what those would be)
