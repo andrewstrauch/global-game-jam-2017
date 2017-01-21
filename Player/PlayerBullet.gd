@@ -7,6 +7,7 @@ var damage = 1
 #var hurtful_type = preload("res://Enemies/HurtfulToPlayer.gd")
 var enemy_class = preload("res://Enemies/Enemy.gd")
 var tiles = preload("res://Scenes/Tiles1.res")
+var pulseLight = preload("res://Scenes/PulseLight.tscn")
 #var cube = preload("res://Enemies/Cube.gd")
 
 func _ready():
@@ -29,6 +30,11 @@ func _on_hitbox_body_enter( body ):
 		body.takeDamage(damage)
 		_death()
 	if(body extends TileMap):
+		# Create pulse & light source
+		var newLight = pulseLight.instance()
+		get_parent().add_child(newLight)
+		newLight.set_pos(get_pos())
+		
 		_death()
 func _death():
 	queue_free()
