@@ -13,12 +13,12 @@ func _ready():
 	get_node("Hitbox").connect("body_enter", self, "_on_hitbox_body_enter")
 	set_fixed_process(true)
 	
-#func init(incomingBool):
-#	isBulletFacingRight = incomingBool
-#	if(isBulletFacingRight == true):
-#		direction = 1
-#	else:
-#		direction = -1
+func init(incomingBool):
+	isBulletFacingRight = incomingBool
+	if(isBulletFacingRight == true):
+		direction = 1
+	else:
+		direction = -1
 
 func _fixed_process(delta):
 	var pos = get_pos() + Vector2(speed * direction, 0)

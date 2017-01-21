@@ -59,7 +59,7 @@ func _weapon_shoot(motion):
 	var bi = bullet.instance()
 	get_tree().get_root().add_child(bi)
 	bi.set_pos(get_pos() + Vector2(20, 20))
-	bi.init(motion)
+	#bi.init(motion)
 	bi.init(isPlayerFacingRight)
 
 #	var rotation  = self.get_rot()
