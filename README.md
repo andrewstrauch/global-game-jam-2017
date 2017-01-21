@@ -11,6 +11,9 @@
 - Rethink fog of war (relates to light bug), can we remove FOW rather than adding white light? art suggestion
 - Level end graphic (Stairs)
 - Enemy graphics (seek Icelus for enemy types?)
+- Iterate on wall graphics
+- Finishing the tile set
+- Player graphics
 - Shooting Reload functionality
 - Shooting Reload UI
 - Level design Map 1
