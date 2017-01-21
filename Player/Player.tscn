@@ -13,7 +13,7 @@ extents = Vector2( 10, 10 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.127, 14.342 )
+extents = Vector2( 10, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -47,6 +47,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Hitbox" type="Area2D" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
@@ -108,9 +109,5 @@ shadow/buffer_size = 2048
 shadow/esm_multiplier = 80.0
 shadow/item_mask = 1
 __meta__ = { "_edit_lock_":true }
-
-[connection signal="area_enter" from="Hitbox" to="." method="_on_Hitbox_area_enter"]
-
-[connection signal="body_enter" from="Hitbox" to="." method="_on_Hitbox_body_enter"]
 
 

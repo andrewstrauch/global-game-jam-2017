@@ -55,7 +55,8 @@ func decrement_health(damage):
 		get_node("./HeartbeatPlayer").play_fast_heartbeat()
 
 func _weapon_shoot():
-	print("shoot")
+	get_node("WeaponReloadTimer").set_wait_time(.3)
+	get_node("WeaponReloadTimer").start()
 	var shoot_speed = 6
 	var bullet = load("res://Player/PlayerBullet.tscn")
 	
