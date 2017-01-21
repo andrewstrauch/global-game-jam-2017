@@ -103,4 +103,11 @@ shadow/esm_multiplier = 80.0
 shadow/item_mask = 1
 __meta__ = { "_edit_lock_":true }
 
+[node name="WeaponReloadTimer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 
