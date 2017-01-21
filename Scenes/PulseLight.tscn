@@ -5,6 +5,7 @@
 
 [node name="PulseLight" type="Node2D"]
 
+z/z = 1
 script/script = ExtResource( 1 )
 maxAge = 10
 
