@@ -25,7 +25,6 @@ func _fixed_process(delta):
 		update() # we update the node so it has to draw it self again
 
 func _draw():
-	print('drawing...')
 	# if there are points to draw
 	if points.size() > 1:
 		for p in points:
