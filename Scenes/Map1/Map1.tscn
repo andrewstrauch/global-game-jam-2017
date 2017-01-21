@@ -50,5 +50,6 @@ z/z = 1
 [node name="Floater" parent="Enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 64.2659, 419.944 )
+aggroRange = 256.0
 
 
