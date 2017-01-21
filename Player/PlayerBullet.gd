@@ -8,6 +8,7 @@ var damage = 1
 var enemy_class = preload("res://Enemies/Enemy.gd")
 var tiles = preload("res://Scenes/Tiles1.res")
 var pulseLight = preload("res://Scenes/PulseLight.tscn")
+var shockWave = preload("res://Scenes/ShockWave.tscn")
 #var cube = preload("res://Enemies/Cube.gd")
 
 func _ready():
@@ -31,6 +32,9 @@ func _on_hitbox_body_enter( body ):
 		_death()
 	if(body extends TileMap):
 		# Create pulse & light source
+		var newWave = shockWave.instance()
+		get_parent().add_child(newWave)
+		newWave.set_pos(get_pos())
 		var newLight = pulseLight.instance()
 		get_parent().add_child(newLight)
 		newLight.set_pos(get_pos())
