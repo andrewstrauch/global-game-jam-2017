@@ -11,15 +11,12 @@ script/script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
-visibility/light_mask = 1
-
 [node name="Foreground" type="Node" parent="."]
 
 [node name="Checkpoint" parent="Foreground" instance=ExtResource( 3 )]
 
 [node name="TileMap" type="TileMap" parent="Foreground"]
 
-visibility/light_mask = 3
 mode = 0
 tile_set = ExtResource( 4 )
 cell/size = Vector2( 64, 64 )
