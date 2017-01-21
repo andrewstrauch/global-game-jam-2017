@@ -10,6 +10,7 @@ extents = Vector2( 9.99998, 10 )
 
 [node name="Cube" type="KinematicBody2D"]
 
+visibility/light_mask = 3
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 2.87069, 0, 0, 3.27785, 2.11737, -0.421433 )
@@ -23,6 +24,7 @@ move_speed = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 
+visibility/light_mask = 3
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
