@@ -41,7 +41,7 @@ func _fixed_process(delta):
 	
 	if (isPullingTrigger && weaponCanFire):
 			weaponCanFire = false
-			_weapon_shoot(motion)
+			_weapon_shoot()
 	
 func reset_health():
 	health = 3
@@ -54,9 +54,9 @@ func decrement_health(damage):
 	elif (health <= HEARTBEAT_SLOW_HP):
 		get_node("./HeartbeatPlayer").play_fast_heartbeat()
 
-func _weapon_shoot(motion):
+func _weapon_shoot():
 	print("shoot")
-	var shoot_speed = 10
+	var shoot_speed = 6
 	var bullet = load("res://Player/PlayerBullet.tscn")
 	
 	var bi = bullet.instance()
@@ -64,7 +64,7 @@ func _weapon_shoot(motion):
 	bi.set_rot(bullet_rotation)
 	bi.set_pos(get_pos() + Vector2(0, 0))
 	get_parent().add_child(bi)
-	#bi.apply_impulse(Vector2(), ( get_global_mouse_pos() - self.get_global_pos() ) * shoot_speed)
+	bi.apply_impulse(Vector2(), ( get_global_mouse_pos() - self.get_global_pos() ) * shoot_speed)
 
 	
 #	get_node("WeaponReloadTimer").set_wait_time(.3)
