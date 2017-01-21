@@ -43,9 +43,9 @@ func _fixed_process(delta):
 	else:
 		camera.set_pos(Vector2(160,90))
 		
-#func get_player():
-#	var player_array = get_tree().get_nodes_in_group("player")
-#	return player_array[player_array.size()-1]
+func get_player():
+	var player_array = get_tree().get_nodes_in_group("player")
+	return player_array[player_array.size()-1]
 	
 func kill_player():
 	#Can refactor this if we give player a shield or something
