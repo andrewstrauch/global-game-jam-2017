@@ -10,9 +10,9 @@ points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 
 [sub_resource type="NavigationPolygon" id=2]
 
-vertices = Vector2Array(  )
-polygons = [  ]
-outlines = [  ]
+vertices = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+polygons = [ IntArray( 0, 1, 2, 3 ) ]
+outlines = [ Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 ) ]
 
 [node name="Tileset" type="Node"]
 
