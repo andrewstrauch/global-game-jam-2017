@@ -18,7 +18,7 @@ func _ready():
 	controller = get_node("/root/Controller")
 	load_timer = get_node("LoadTimer")
 	_change_map("map1", 0)
-	# _change_map("res://Scenes/TitleScreen.tscn", 0)
+	# _change_map("title", 0)
 	set_fixed_process(true)
 	
 func _on_DeathTimer_timeout():

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MOTION_SPEED = 160 # Pixels/second
+const MOTION_SPEED = 180 # Pixels/second
 var health = 3
 
 func _ready():
