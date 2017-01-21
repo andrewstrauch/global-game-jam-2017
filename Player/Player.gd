@@ -2,8 +2,11 @@ extends KinematicBody2D
 
 const MOTION_SPEED = 180 # Pixels/second
 var health = 3
+var controller
 
 func _ready():
+	controller = get_node("/root/Controller")
+	controller.cam_target = self
 	set_fixed_process(true)
 
 func _fixed_process(delta):
