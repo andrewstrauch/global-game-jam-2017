@@ -10,6 +10,7 @@ extents = Vector2( 21.9291, 10 )
 
 [node name="PlayerBullet" type="RigidBody2D"]
 
+z/z = 1
 input/pickable = false
 collision/layers = 1
 collision/mask = 1
