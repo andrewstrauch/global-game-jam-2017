@@ -17,10 +17,12 @@
 - Level design Map 1
 - DISCOVERY: Enemy damage the player, figure out "death"
 - Implemment player lose mechanic
-- DISCOVERY: Determine if we want traps (and what those would be)
 - Expand on heartbeat to make heartbeat happening at all times
 - Enemy sound effect -- breathing (happens as long as enemy is alive)
 - Enemy sound effect -- walking (only play if moving, e.g. footsteps)
+
+## Stretch Goals
+- DISCOVERY: Determine if we want traps (and what those would be)
 
 ## Collision Channels
 - Top left (1) - Colision with tileset
