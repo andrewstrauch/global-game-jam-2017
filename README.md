@@ -1,14 +1,13 @@
 # GGJ2017
 
 ## Current Work
-- FlareVulca
+- FlareVulca - Close game loop (have map end)
 - Icelus
 - JediSange - Groom board
 - RamielRowe
 - Zephyrum
 
 ## TODO
-- Close game loop (have map end)
 - Track down the light bug
 - Reload functionality
 - Reload UI
