@@ -12,8 +12,8 @@
 - Level end graphic (Stairs)
 - Enemy graphics (
 - Track down the light bug
-- Reload functionality
-- Reload UI
+- Shooting Reload functionality
+- Shooting Reload UI
 - Level design Map 1
 - DISCOVERY: Figure out enemy types and add them to the list
 - DISCOVERY: Enemy damage the player, figure out "death"
