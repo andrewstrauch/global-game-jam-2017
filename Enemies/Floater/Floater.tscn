@@ -20,10 +20,13 @@ collision/margin = 0.08
 script/script = ExtResource( 1 )
 max_hp = 1
 move_speed = 1
+aggroRange = 256.0
 
 [node name="Sprite" type="Sprite" parent="."]
 
+visibility/opacity = 0.5
 texture = ExtResource( 2 )
+modulate = Color( 1, 0.785156, 0.785156, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
