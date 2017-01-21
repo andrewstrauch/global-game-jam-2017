@@ -12,8 +12,8 @@ extents = Vector2( 21.9291, 10 )
 
 z/z = 1
 input/pickable = false
-collision/layers = 1
-collision/mask = 1
+collision/layers = 1025
+collision/mask = 1025
 mode = 0
 mass = 1.0
 friction = 1.0
@@ -45,6 +45,8 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision/layers = 1025
+collision/mask = 1025
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 

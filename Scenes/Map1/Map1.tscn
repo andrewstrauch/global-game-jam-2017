@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Scenes/Map1/Map1.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Checkpoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Tiles1.res" type="TileSet" id=4]
 [ext_resource path="res://Enemies/Cube/Cube.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/Floater/Floater.tscn" type="PackedScene" id=6]
 
 [node name="Map1" type="Node2D"]
 
@@ -45,5 +46,9 @@ tile_data = IntArray( -262153, 8, -196617, 8, -262143, 1, -262142, 1, -262131, 8
 
 transform/pos = Vector2( 556.356, 30.9086 )
 z/z = 1
+
+[node name="Floater" parent="Enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 64.2659, 419.944 )
 
 
