@@ -1,20 +1,18 @@
 # GGJ2017
 
 ## Current Work
-- FlareVulca - 
+- FlareVulca - DISCOVERY: Enemy damage the player, figure out "death"
 - Icelus - Coding last enemy
-- JediSange - 
+- JediSange - - BUG: Collision on bottom right wall is wrong (shoot through wall objects on current Map 1) -- recheck all tiles
 - RamielRowe - Track down the light bug
 - Zephyrum - Rotate tiles to have up/down/left/right walls
 
-## TODO (Coding)
-- BUG: Collision on bottom right wall is wrong (shoot through wall objects on current Map 1) -- recheck all tiles
+## TODO (Coding)\
+- Implemment player lose mechanic
+- Level design Map 1
+- Expand on heartbeat to make heartbeat happening at all times
 - Shooting Reload functionality
 - Shooting Reload UI
-- Level design Map 1
-- DISCOVERY: Enemy damage the player, figure out "death"
-- Implemment player lose mechanic
-- Expand on heartbeat to make heartbeat happening at all times
 
 ## TODO (Art)
 - Level end graphic (Stairs)
