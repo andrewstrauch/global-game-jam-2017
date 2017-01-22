@@ -37,4 +37,4 @@ func _generate_direction():
 		
 	get_node("ChangeDirectionTimer").set_one_shot(true)
 	get_node("ChangeDirectionTimer").start()
-	get_node("ChangeDirectionTimer").set_wait_time(5)
+	get_node("ChangeDirectionTimer").set_wait_time(3)
