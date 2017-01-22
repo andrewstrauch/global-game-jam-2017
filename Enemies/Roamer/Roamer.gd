@@ -1,6 +1,7 @@
 extends "res://Enemies/Enemy.gd"
 
 var currentDirection = Vector2()
+const MOTION_SPEED = 55
 
 func _ready():
 	get_node("ChangeDirectionTimer").connect("timeout", self, "_change_timer_timeout")
@@ -15,7 +16,7 @@ func _fixed_process(delta):
 		motion += currentDirection
 	if (currentDirection == Vector2(1, 0)): #right
 		motion += currentDirection
-	if (currentDirection == Vector2(1, 0)): #down
+	if (currentDirection == Vector2(0, 1)): #down
 		motion += currentDirection
 	
 	motion = motion.normalized()*MOTION_SPEED*delta
@@ -33,8 +34,8 @@ func _generate_direction():
 	if (dir == 3): #right
 		currentDirection = Vector2(1, 0)
 	if (dir == 4): #down
-		currentDirection = Vector2(1, 0)
+		currentDirection = Vector2(0, 1)
 		
 	get_node("ChangeDirectionTimer").set_one_shot(true)
 	get_node("ChangeDirectionTimer").start()
-	get_node("ChangeDirectionTimer").set_wait_time(3)
+	get_node("ChangeDirectionTimer").set_wait_time(1)
