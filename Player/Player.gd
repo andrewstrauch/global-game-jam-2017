@@ -9,17 +9,23 @@ var controller
 var isPullingTrigger = false
 var weaponCanFire = bool (true)
 var isPlayerFacingRight = false
+var maxAmmo = 6
+var ammo #This is for tracking your current bullets
+var reloadTimeInSeconds = 3 #How fast you reload
+var isReloading = false
 
 var pulseLight = preload("res://Scenes/PulseLight.tscn")
 var shockWave = preload("res://Scenes/ShockWave.tscn")
 
 func _ready():
+	ammo = maxAmmo
 	controller = get_node("/root/Controller")
 	controller.cam_target = self
-	get_node("WeaponReloadTimer").set_one_shot(true)
+	get_node("WeaponFireIntervalTimer").set_one_shot(true)
 	weaponCanFire = true
+	get_node("WeaponFireIntervalTimer").connect("timeout", self, "_weapon_fire_interval_timer_timeout")
+	get_node("WeaponReloadTimer").set_one_shot(true)
 	get_node("WeaponReloadTimer").connect("timeout", self, "_weapon_reload_timer_timeout")
-	#get_node("hitbox").connect("body_enter", self, "_on_hitbox_body_enter")
 	
 	set_fixed_process(true)
 
@@ -40,7 +46,14 @@ func _fixed_process(delta):
 	
 	isPullingTrigger = Input.is_mouse_button_pressed(1)
 	
-	if (isPullingTrigger && weaponCanFire):
+	print(get_node("WeaponReloadTimer").get_time_left())
+	
+	if (ammo <= 0 && not isReloading):
+		isReloading = true
+		get_node("WeaponReloadTimer").set_wait_time(reloadTimeInSeconds)
+		get_node("WeaponReloadTimer").start()
+	
+	if (isPullingTrigger && weaponCanFire && ammo > 0):
 			weaponCanFire = false
 			_weapon_shoot()
 	
@@ -56,8 +69,9 @@ func decrement_health(damage):
 		get_node("./HeartbeatPlayer").play_fast_heartbeat()
 
 func _weapon_shoot():
-	get_node("WeaponReloadTimer").set_wait_time(.3)
-	get_node("WeaponReloadTimer").start()
+	ammo -= 1
+	get_node("WeaponFireIntervalTimer").set_wait_time(.3)
+	get_node("WeaponFireIntervalTimer").start()
 	var shoot_speed = 1500
 	var bullet = load("res://Player/PlayerBullet.tscn")
 	
@@ -68,31 +82,12 @@ func _weapon_shoot():
 	get_parent().add_child(bi)
 	bi.apply_impulse(Vector2(), ( get_global_mouse_pos() - self.get_global_pos() ).normalized() * shoot_speed)
 
-	
-#	get_node("WeaponReloadTimer").set_wait_time(.3)
-#	get_node("WeaponReloadTimer").start()
-#	var bullet = load("res://Player/PlayerBullet.tscn")
-#	var bi = bullet.instance()
-#	get_tree().get_root().add_child(bi)
-#	bi.set_pos(get_pos() + Vector2(20, 20))
-#	bi.init(motion)
-#	bi.init(isPlayerFacingRight)
-
-#	var rotation  = self.get_rot()
-#	var direction = Vector2(sin(rotation), cos(rotation))
-#	
-#	var distance_from_me = 100 #need to best adjusted by you
-#	var spawn_point      = self.get_global_pos() + direction * distance_from_me
-#	
-#	var bullet = load("res://Player/PlayerBullet.tscn")
-#	var bi = bullet.instance()
-#	var world  = self.get_tree().get_root()
-#	
-#	world.add_child(bi)
-#	bi.set_global_pos(spawn_point)
+func _weapon_fire_interval_timer_timeout():
+    weaponCanFire = true
 
 func _weapon_reload_timer_timeout():
-    weaponCanFire = true
+	ammo = maxAmmo
+	isReloading = false
 
 func _on_Hitbox_body_enter( body ):
 	if(body extends TileMap):
