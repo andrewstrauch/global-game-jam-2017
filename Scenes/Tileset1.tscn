@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/RoughTiles.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Floor.png" type="Texture" id=2]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=11]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
@@ -13,12 +13,17 @@ points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=9]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
@@ -33,17 +38,12 @@ points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
 [sub_resource type="ConvexPolygonShape2D" id=10]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 
-[sub_resource type="NavigationPolygon" id=9]
+[sub_resource type="NavigationPolygon" id=8]
 
 vertices = Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 polygons = [ IntArray( 0, 1, 2, 3 ) ]
@@ -53,6 +53,7 @@ outlines = [ Vector2Array( -32, -32, 32, -32, 32, 32, -32, 32 ) ]
 
 [node name="Tile1" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/light_mask = 3
 transform/pos = Vector2( 32, 32 )
 texture = ExtResource( 1 )
@@ -63,7 +64,7 @@ region_rect = Rect2( 0, 0, 64, 64 )
 
 visibility/light_mask = 3
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 11 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -82,17 +83,16 @@ trigger = false
 
 [node name="Tile2" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/light_mask = 3
-transform/pos = Vector2( 160, 96 )
+transform/pos = Vector2( 160, 32 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -64 )
 region = true
 region_rect = Rect2( 64, 0, 64, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile2"]
 
 visibility/light_mask = 3
-transform/pos = Vector2( 0, -64 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -113,19 +113,18 @@ trigger = false
 
 [node name="Tile3" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/light_mask = 3
-transform/pos = Vector2( 288, 96 )
+transform/pos = Vector2( 288, 32 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -64 )
 region = true
 region_rect = Rect2( 128, 0, 64, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile3"]
 
 visibility/light_mask = 3
-transform/pos = Vector2( 0, -64 )
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 9 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -144,19 +143,18 @@ trigger = false
 
 [node name="Tile4" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/light_mask = 3
-transform/pos = Vector2( 416, 96 )
+transform/pos = Vector2( 416, 32 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -64 )
 region = true
 region_rect = Rect2( 192, 0, 64, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile4"]
 
 visibility/light_mask = 3
-transform/pos = Vector2( 0, -64 )
 input/pickable = false
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 12 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -175,19 +173,18 @@ trigger = false
 
 [node name="Tile5" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/light_mask = 3
-transform/pos = Vector2( 544, 96 )
+transform/pos = Vector2( 544, 32 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -64 )
 region = true
 region_rect = Rect2( 256, 0, 64, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile5"]
 
 visibility/light_mask = 3
-transform/pos = Vector2( 0, -64 )
 input/pickable = false
-shapes/0/shape = SubResource( 5 )
+shapes/0/shape = SubResource( 13 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -206,19 +203,18 @@ trigger = false
 
 [node name="Tile6" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/light_mask = 3
-transform/pos = Vector2( 32, 224 )
+transform/pos = Vector2( 32, 160 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -64 )
 region = true
 region_rect = Rect2( 320, 0, 64, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile6"]
 
 visibility/light_mask = 3
-transform/pos = Vector2( 0, -64 )
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -238,18 +234,16 @@ trigger = false
 [node name="Tile7" type="Sprite" parent="."]
 
 visibility/light_mask = 3
-transform/pos = Vector2( 160, 224 )
+transform/pos = Vector2( 160, 160 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -64 )
 region = true
 region_rect = Rect2( 384, 0, 64, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile7"]
 
 visibility/light_mask = 3
-transform/pos = Vector2( 0, -64 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -268,17 +262,16 @@ trigger = false
 
 [node name="Tile8" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/light_mask = 3
-transform/pos = Vector2( 288, 224 )
+transform/pos = Vector2( 288, 160 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -64 )
 region = true
 region_rect = Rect2( 448, 0, 64, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile8"]
 
 visibility/light_mask = 3
-transform/pos = Vector2( 0, -64 )
 input/pickable = false
 shapes/0/shape = SubResource( 10 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -306,7 +299,7 @@ centered = false
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Floor"]
 
 transform/pos = Vector2( 32, 32 )
-navpoly = SubResource( 9 )
+navpoly = SubResource( 8 )
 enabled = true
 
 
