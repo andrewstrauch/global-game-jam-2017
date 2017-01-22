@@ -2,8 +2,7 @@
 
 ## Current Work
 - FlareVulca - DISCOVERY: Enemy damage the player, figure out "death"
-- Icelus - Shooting Reload functionality
-- JediSange - 
+- JediSange - BUG: Pathfinding goes out of bounds of floor tiles, above and to the left only
 - RamielRowe - Track down the light bug
 - Zephyrum - Rotate tiles to have up/down/left/right walls
 
@@ -12,15 +11,14 @@
 - Level design Map 1
 - Reduce bullet size
 - BUG: Fix gravity of bullet, should behave as a kinematic body (requires removale of impulse and change to have bullet looping in direction)
-- BUG: Pathfinding goes out of bounds of floor tiles, above and to the left only
 - Shooting Reload UI
 
 ## TODO (Art)
 - Level end graphic (Stairs)
 - Iterate on wall graphics
 - Finishing the tile set
-- Player graphics
-- Enemy graphics (seek Icelus for enemy types?)
+- Finish player graphic? -- confirm with Zeph if still an issue
+- Enemy graphics (see enemy types in folder)
 
 ## TODO (Music/Sound)
 - Enemy sound effect -- breathing (happens as long as enemy is alive)
