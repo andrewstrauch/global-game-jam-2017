@@ -3,7 +3,7 @@
 ## Current Work
 - FlareVulca - DISCOVERY: Enemy damage the player, figure out "death"
 - Icelus - Shooting Reload functionality
-- JediSange - BUG: Collision on bottom right wall is wrong (shoot through wall objects on current Map 1) -- recheck all tiles
+- JediSange - 
 - RamielRowe - Track down the light bug
 - Zephyrum - Rotate tiles to have up/down/left/right walls
 
@@ -12,6 +12,7 @@
 - Level design Map 1
 - Reduce bullet size
 - BUG: Fix gravity of bullet, should behave as a kinematic body (requires removale of impulse and change to have bullet looping in direction)
+- BUG: Pathfinding goes out of bounds of floor tiles, above and to the left only
 - Shooting Reload UI
 
 ## TODO (Art)
