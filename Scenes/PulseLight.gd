@@ -9,8 +9,10 @@ func _ready():
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
+	Controller.current_map.get_node("Fog").set_visible(get_global_pos().x,
+	 get_global_pos().y, -1)
 	age += delta
 	if (age > maxAge):
+		Controller.current_map.get_node("Fog").set_visible(
+			get_global_pos().x, get_global_pos().y)
 		queue_free()
-	elif (age > (maxAge / 2)):
-		get_node("./Light2D").set_energy((maxAge - age)/(maxAge/2))

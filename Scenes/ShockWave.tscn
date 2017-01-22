@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Scenes/ShockWave.gd" type="Script" id=1]
 [ext_resource path="res://Textures/shockWave.tex" type="Texture" id=2]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource/name = "scale"
 length = 1.0
@@ -15,9 +15,14 @@ tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 1e-05, 1e-05 ), Vector2( 0.75, 0.75 ) ] }
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ { "frames":[ ExtResource( 2 ) ], "loop":false, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="ShockWave" type="Node2D"]
 
@@ -30,7 +35,7 @@ maxAge = 1
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/scale = SubResource( 2 )
+anims/scale = SubResource( 1 )
 playback/active = true
 playback/speed = 2.0
 blend_times = [  ]
@@ -39,7 +44,32 @@ autoplay = "scale"
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
 transform/scale = Vector2( 0.75, 0.75 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+transform/pos = Vector2( 4, 0.500002 )
+transform/scale = Vector2( 1.875, 1.98438 )
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 3.06667, 0, 0, 3.02362, -0.266665, -0.755906 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 3
+collision/mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+transform/pos = Vector2( -0.266665, -0.755906 )
+transform/scale = Vector2( 3.06667, 3.02362 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Scenes/Map1/Map1.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Tiles1.res" type="TileSet" id=4]
 [ext_resource path="res://Enemies/Cube/Cube.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/Roamer/Roamer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Fog.tscn" type="PackedScene" id=7]
 
 [node name="Map1" type="Node2D"]
 
@@ -13,7 +14,7 @@ script/script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
-z/z = 1
+z/z = 2
 
 [node name="Foreground" type="Node" parent="."]
 
@@ -45,10 +46,13 @@ tile_data = IntArray( -262153, 8, -196617, 8, -262143, 1, -262142, 1, -262131, 8
 [node name="Cube" parent="Enemies" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 556.356, 30.9086 )
-z/z = 1
 
 [node name="Roamer" parent="Enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 287.924, -61.698 )
+
+[node name="Fog" parent="." instance=ExtResource( 7 )]
+
+z/z = 1
 
 

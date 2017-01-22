@@ -50,7 +50,7 @@ func _spawn_shockwave():
 	
 	var newLight = pulseLight.instance()
 	get_parent().add_child(newLight)
-	newLight.set_pos(get_pos())
+	newLight.set_global_pos(get_global_pos())
 		
 func _death():
 	queue_free()
