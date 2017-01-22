@@ -2,8 +2,8 @@
 
 ## Current Work
 - FlareVulca - DISCOVERY: Enemy damage the player, figure out "death"
-- Icelus - Coding last enemy
-- JediSange - - BUG: Collision on bottom right wall is wrong (shoot through wall objects on current Map 1) -- recheck all tiles
+- Icelus - Shooting Reload functionality
+- JediSange - BUG: Collision on bottom right wall is wrong (shoot through wall objects on current Map 1) -- recheck all tiles
 - RamielRowe - Track down the light bug
 - Zephyrum - Rotate tiles to have up/down/left/right walls
 
@@ -12,7 +12,6 @@
 - Level design Map 1
 - Reduce bullet size
 - BUG: Fix gravity of bullet, should behave as a kinematic body (requires removale of impulse and change to have bullet looping in direction)
-- Shooting Reload functionality
 - Shooting Reload UI
 
 ## TODO (Art)
